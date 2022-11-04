@@ -1,0 +1,163 @@
+﻿body {
+    font-size: 0.98rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/*ширина строчки для вибору в селектах select2*/
+.row .rate {
+    width: 300px;
+}
+/*колір фону карточки товару.*/
+.row .backcolor {
+    background-color: #F5F5F5;
+}
+
+.aspect-ratio-box {
+    position: relative;
+}
+
+    /* Create a pseudo element that uses padding-bottom to take up space */
+    .aspect-ratio-box::after {
+        display: block;
+        content: '';       
+        padding-bottom: 70%;
+    }
+
+    /* Image is positioned absolutely relative to the parent element */
+    .aspect-ratio-box img {
+        /* Image should match parent box size */
+        position: absolute;
+        left: 0;
+        top: 28px;       
+        width: 100%;
+        height: 90%;
+    }
+
+
+
+
+
+
+.rowcolor {
+    color: #0000FF;
+}
+
+a.borders {
+    margin-right: 1rem;    
+    /*параметри для рамочки*/
+    border: 3px solid #FF00FF;   
+    font-size: 15px;
+}
+
+a.borderusers {
+    text-decoration-color: #8B008B;
+    border: 3px solid #FF00FF;
+    font-size: 15px;
+}
+
+.buttonstyle {
+    width: 250px;
+    color: #000080;
+    background-color: #E0FFFF !important;
+}
+li.active,
+a:hover {
+    background-color: #B0E0E6;
+    /*формат для тексту строчки,на яку наведена мишка.*/
+    font-family: georgia, times, verdana;
+    /*підкреслення для наведеної строчки.*/
+    text-decoration: underline; 
+}
+.carouselheight{
+    height:200px;
+}
+
+.list-unstyled  .fontcolor {
+    color: #800000;
+    font-size: 1.5rem;
+}
+.row .col{
+    color:aqua
+}
+
+.tg {
+    width: 250px;
+    color: blueviolet;
+    background-color: #BCDAD5 !important;
+}
+i {
+    font-family: fontawesome !important;
+}
+
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 90px 190px 85px 50px;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+
+    .files input:focus {
+        outline: 2px dashed #FF0000;
+        outline-offset: -10px;
+       /* -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        transition: outline-offset .15s ease-in-out, background-color .15s linear;*/
+        border: 1px solid #FF0000;
+    }
+
+.files {
+    position: relative
+}
+
+    .files:after {
+        pointer-events: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 50px;
+        right: 0;
+        height: 56px;
+        content: "";
+        /*background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);*/
+        display: block;
+        margin: 0 auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+.color input {
+    background-color: #0000FF;
+}
+
+.files:before {
+    position: absolute;
+    bottom: 2px;
+    left: 0px;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: "або перетягнути сюди";
+    display: block;
+    margin: 0 auto;
+    color: #0000FF;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.bgcolor {
+    background-color: #E6E6FA;
+}
+
+
+/*@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");*/
+
+
+

@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Користувачі</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Головна </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="products.html">Магазин сувенірів</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="text-muted" href="#" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                         height="20" fill="none" stroke="white"
+                         stroke-linecap="round" stroke-linejoin="round"
+                         stroke-width="3" class="mx-3" role="img" viewBox="0 0 24 24"
+                         focusable="false">
+                        <title>Search</title>
+                        <circle cx="10.5" cy="10.5" r="7.5" color="white"></circle>
+                        <path d="M21 21l-5.2-5.2"></path>
+                    </svg>
+                </a>
+                <a class="btn btn-sm btn-outline-secondary text-light border border-warning " style="margin-right:1rem;" href="#">Авторизуватись</a>
+                <!--<a class="btn btn-sm  btn-outline-link  border border-warning" style="color: #FFFF00" href="/users.html">Наші читачі сайту</a>-->
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center m-3">
+                <h2 class="mb-5">Вітаємо на сторінці користувачів!</h2>
+                <button class=" shadow-lg p-3 mb-5 bg-white rounded tg" id="newuser">Додати</button>
+                <table class="table table-striped mt-5 " id="table">
+                    <thread>
+                        <tr>
+                            <th scope="col">Фото</th>
+                            <th scope="col">Прізвище</th>
+                            <th scope="col">Ім"я</th>
+                            <th scope="col">Телефон</th>
+                            <th scope="col">Наявність собаки</th>
+                            <th scope="col">Опції</th>
+
+                        </tr>
+                    </thread>
+                    <tbody id="mybody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="mymodalwindow" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Внесіть дані про користувача</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="needs-validation p-2" novalidate>
+                    <div class="form-group">
+                        <div class="col-md-5 mb-3 ml-2">
+                            <label for="txtsurname">Прізвище</label>
+                            <input type="text" class="form-control" id="txtsurname" placeholder="Прізвище">
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть правильні дані
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3 ml-2">
+                            <label for="txtname">Ім"я</label>
+                            <input type="text" class="form-control" id="txtname" placeholder="Ім'я">
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть правильні дані
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-5 mb-4 ml-4">
+                            <label for="txttel">Телефон</label>
+                            <input type="text" class=" phone form-control" id="txttel" placeholder="Телефон">
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть телефон
+                            </div>
+
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <img src="/images/empty.jpg" width="60%"
+                                         id="imgPhoto" />
+                                    <input type="hidden" id="selectImageBase64" />
+                                    <form method="post" action="#" id="#">
+                                        <!--<label>Завантажте фото </label>-->
+                                        <div class=" form-group files">
+                                        <input style=" background-color: #E6E6FA;"
+                                                       type="file"
+                                                       id="fileImage"
+                                                       accept=".jpg, .jpeg, .png">
+                                        <div class="invalid-feedback">Потрібно обрати фото</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div classs="container">
+                        <div class="row ml-3">
+                            <h5>Чи є у вас собака:</h5>
+                            <div class="form-check ml-2">
+                                <input class="form-check-input" type="radio" name="radiodog" id="yesdog" value="так" >
+                                <label class="form-check-label " for="yesdog">
+                                    Так
+                                </label>
+                            </div>
+                            <div class="form-check ml-2">
+                                <input class="form-check-input" type="radio" name="radiodog" id="nonedog" value="ні">
+                                <label class="form-check-label" for="nonedog">
+                                    Ні
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 p-3">
+                                <button type="button" class="btn btn-primary" id="buttonsave">Ок,все вірно</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Я передумала реєструватись</button>
+                                <button type="submit" class="btn btn-primary">Перевірка</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modaldelete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalText">
+                        <!--<p>Ви впевнені,що хочете видалити цей запис?</p>-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="deletebutton">Так,я впевнена</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ні,не хочу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal" id="editmodalwindow" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Редагування даних про користувача</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="needs-validation p-2" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-5 mb-3 ml-2">
+                            <label for="txtsurname">Прізвище</label>
+                            <input type="text" class="form-control" id="txteditsurname" placeholder="Прізвище" pattern="[A-Za-z]{1,15}" required>
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть правильні дані
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3 ml-2">
+                            <label for="txtname">Ім"я</label>
+                            <input type="text" class="form-control" id="txteditname" placeholder="Ім'я" pattern="[A-Za-z]{1,15}" required>
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть правильні дані
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-5 mb-3 ml-2">
+                            <label for="txttel">Телефон</label>
+                            <input type="text" class="phone form-control" id="txtedittel" placeholder="Телефон" required>
+                            <div class="valid-feedback">
+                                Ок
+                            </div>
+                            <div class="invalid-feedback">
+                                Введіть телефон
+                            </div>
+
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <img src="/images/empty.jpg" width="50%"
+                                         id="imgPhotoedit" />
+                                    <input type="hidden" id="selectImageBase64edit" />
+                                    <form method="post" action="#" id="#">
+                                        <div class="form-group files">
+                                            <label>Завантажте фото </label>
+                                            <input type="file" class="form-control "
+                                                   id="fileImageedit"
+                                                   accept=".jpg, .jpeg, .png">
+                                            <div class="invalid-feedback">Потрібно обрати фото</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div classs="container">
+                        <div class="row ml-3">
+                            <h5>Чи є у вас собака:</h5>
+                            <div class="form-check ml-2">
+                                <input class="form-check-input" type="radio" name="radiodog" id="edityesdog" value="так">
+                                <label class="form-check-label " for="edityesdog">
+                                    Так
+                                </label>
+                            </div>
+                            <div class="form-check ml-2">
+                                <input class="form-check-input" type="radio" name="radiodog" id="editnonedog" value="ні" >
+                                <label class="form-check-label" for="editnonedog">
+                                    Ні
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 p-3">
+                                <button type="button" class="btn btn-primary" id="editbutton">Ок,все вірно</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ні,не впевнена</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Редагування даних</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="needs-validation p-2" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3 ml-2">
+                        <label for="txteditsurname">Прізвище</label>
+                        <input type="text" class="form-control" name="ttt" id="txteditsurname" placeholder="Прізвище" pattern="[A-Za-z]{1,15}" required>
+                        <div class="valid-feedback">
+                            Ок
+                        </div>
+                        <div class="invalid-feedback">
+                            Введіть правильні дані
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3 ml-2">
+                        <label for="txteditname">Ім"я</label>
+                        <input type="text" class="form-control" id="txteditname" placeholder="Ім'я" pattern="[A-Za-z]{1,15}" required>
+                        <div class="valid-feedback">
+                            Ок
+                        </div>
+                        <div class="invalid-feedback">
+                            Введіть правильні дані
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3 ml-2">
+                        <label for="txtedittel">Телефон</label>
+                        <input type="text" class="phone form-control" id="txtedittel" placeholder="Телефон" required>
+                        <div class="valid-feedback">
+                            Ок
+                        </div>
+                        <div class="invalid-feedback">
+                            Введіть телефон
+                        </div>
+                    </div>
+                </div>
+                <div classs="container">
+                    <h5>Чи є у вас собака:</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radiodog" id="edityesdog" value="так">
+                        <label class="form-check-label " for="yesdog">
+                            Так
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radiodog" id="editnonedog" value="ні">
+                        <label class="form-check-label" for="nonedog">
+                            Ні
+                        </label>
+                    </div>
+                </div>
+
+                    <button type="button" class="btn btn-primary" id="editbutton">Ок,все вірно</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ні,не впевнена</button>-->
+        <!--<button type="submit" class="btn btn-primary">Перевірка</button>-->
+        <!--</form>
+        </div>
+    </div>-->
+    </div>
+
+
+
+
+
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/users.js"></script>
+    <script src="js/jquery.inputmask.bundle.min.js"></script>
+</body>
+</html>
